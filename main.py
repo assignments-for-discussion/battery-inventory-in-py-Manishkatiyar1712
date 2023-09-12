@@ -1,9 +1,18 @@
 
 def count_batteries_by_health(present_capacities):
-  return {
-    "healthy": 0,
-    "exchange": 0,
-    "failed": 0
+    h=e=f=0
+    for i in present_capacities:
+        a=(100*i)/120
+        if a>80:
+            h=h+1
+        elif (a>=63 and a<=80):
+            e=e+1
+        else:
+            f=f+1
+    return {
+    "healthy": h,
+    "exchange": e,
+    "failed": f
   }
 
 
